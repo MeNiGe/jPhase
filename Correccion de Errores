@@ -1,0 +1,78 @@
+*// Estos son los try y catch implementando//*   
+    public static double[] expUnif(Matrix A, int n, double delta,
+    
+    	Vector leftVec,
+        Vector rightVec, int truncate) {  
+    	double times[] = new double[n];
+    	for (int i = 0; i < n; i++)
+        	times[i] = delta * i;
+    	try {
+    	return expUnif(A, times, leftVec, rightVec, truncate);
+    	}catch(Exception e) {
+    		System.out.print("string");
+    	}
+    	return expUnif(A, times, leftVec, rightVec, truncate);
+     
+                     XYSeries dataPDF = new XYSeries("PDF", true, false);
+                double mean = info.var.expectedValue();
+                double sigma = info.var.stdDeviation();
+        		double xMax = mean + Math.max(3.0 * sigma, 0.5*mean);
+        		double cv = info.var.CV();
+        		double numPoints = 20 + ( (!Double.isNaN(cv)) ? (int)(5 * cv ) :0 );
+        		numPoints = (int)Math.max(400,numPoints);
+        		double dx= xMax / numPoints;
+        		double x = 0;
+        		try {
+            		if(info.var.getNumPhases()==1)x = dx;
+                	for(int i = 0; i<numPoints; i++){
+                        dataPDF.add(x, ((AbstractContPhaseVar)info.var).pdf(x) );
+                        x+=dx;	}
+            		}catch (Exception e) {
+                    		System.out.println("Hay algo mal aquí, pero como tú nos dijiste que"
+                    				+ "no teníamos que saber, entonces pues no tenemos idea de qué sucede."
+                    				+ "pero aquí está el error!");
+               
+                   @SuppressWarnings("finally")
+	public double pdf(double x) {
+    	try { 	
+
+    	return MatrixUtils.exp(this.getMatrix(), x, this.getVector(), this
+                .getMat0());
+    	} catch(Exception e) {
+    		
+    	}
+    finally {
+     	return MatrixUtils.exp(this.getMatrix(), x, this.getVector(), this
+                .getMat0());
+    }
+    }
+    
+        /** Required by TreeSelectionListener interface. */
+public void valueChanged(TreeSelectionEvent e) {
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode)
+                           tree.getLastSelectedPathComponent();
+       try {
+        if (node == null) {
+        	System.out.println("lastSelectedPathComponent es null");
+        	return;
+        }
+
+        Object nodeInfo = node.getUserObject();
+        if (node.isLeaf()) {
+            PhaseVarInfo info = (PhaseVarInfo)nodeInfo; 
+            displayVar(info);
+            if (DEBUG) {
+                //add debug print 
+            }
+        } else {
+ 
+        }
+        if (DEBUG) {
+            System.out.println(nodeInfo.toString());
+        }
+       }catch(Exception b){
+			System.out.print("No es");
+		}
+    }
+    
+    
