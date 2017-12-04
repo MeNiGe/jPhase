@@ -1,0 +1,22 @@
+/**
+	* Survival Function panel;
+	*/
+private ChartPanel survivalPane;
+
+//Survival Tab TODO
+                XYSeries dataSurvival = new XYSeries("Survival", true, false);
+                x=0;
+                for(int i = 0; i<numPoints; i++){
+                	dataSurvival.add(x, info.var.survival(x));
+                	x+=dx;
+                }
+                DefaultTableXYDataset datasetSurvival = new DefaultTableXYDataset(); 
+                datasetSurvival.addSeries(dataSurvival);
+
+                JFreeChart chartSurvival = ChartFactory.createXYLineChart("Survival",
+                		"x", "F(x)", datasetSurvival, PlotOrientation.VERTICAL, 
+                		true, true, true);
+                survivalPane = new ChartPanel(chartSurvival);
+                survivalPane.setPreferredSize(new java.awt.Dimension(width, height));
+                varPane.addTab("Survival", icon,
+                		survivalPane, "Survival Funtion");
